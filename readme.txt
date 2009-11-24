@@ -4,7 +4,7 @@ Donate link: http://1080d.com/
 Tags: videos, vodpod, media, embedding
 Requires at least: 2.8
 Tested up to: 2.8.6
-Stable tag: trunk
+Stable tag: 0.2
 
 Vodpod Embedder is a plugin that allows you to easily embed videos from Vodpod from the Add Media and Add Video tabs.
 
