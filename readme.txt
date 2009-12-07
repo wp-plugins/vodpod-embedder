@@ -4,7 +4,7 @@ Donate link: http://1080d.com/
 Tags: videos, vodpod, media, embedding
 Requires at least: 2.8
 Tested up to: 2.8.6
-Stable tag: 0.2
+Stable tag: 0.3
 
 Vodpod Embedder is a plugin that allows you to easily embed videos from Vodpod from the Add Media and Add Video tabs.
 
@@ -43,7 +43,8 @@ Each Vodpod account has an API key. Just login to Vodpod and click on the advanc
 1. Vodpod in action. I put in the name of a Vodpod user and got all the videos from their collection.
 
 == Changelog ==
-
+= 0.3 =
+Saving settings works properly.
 = 0.2 =
 *Combined all of the php files into vodpod_embedder.php and switched the code to use the Plugin Settings API.
 = 0.1 =

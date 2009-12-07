@@ -3,7 +3,7 @@
 Plugin Name: Vodpod Embedder
 Description: Allows browsing of Vodpod collections and embedding from inside Wordpress
 Author: Ned Watson
-Version: 0.2
+Version: 0.3
 Author URI: http://1080d.com/code/vodpod-plugin
 */
 
@@ -21,10 +21,14 @@ function vodpod_embedder_menu() {
 
 //Here is where we add our settings.
 function register_vodpodsettings() { // whitelist options
-	//This is the one setting we want to keep track of.
-	register_setting('vodpod_embedder_options', 'vodpod_embedder', 'vodpod_embedder_validate');
+
+
+	register_setting('vodpod_embedder', 'vodpod_embedder_options', 'vodpod_embedder_validate');
 	//And this is our section, named vodpod_options. I've titled it Vodpod Settings. A little confusing I guess.
 	//Then we run vodpod_settings_validate to check our input. 
+	
+	
+	//This is the one setting we want to keep track of.
  	//add_settings_section('vodpod_embedder_options', 'Vodpod Settings', '', 'vodpod_embedder');
 	
 	//This makes the line of text that says API settings. Woo!
@@ -38,11 +42,11 @@ function vodpod_embedder_options_page() {
 	?>
 	<div class="wrap">
 	<h2>Vodpod Embedder Settings</h2>
-	<?php do_settings_sections('vodpod_embedder');?>
 	<form method="post" action="options.php">
 	<?php 
+	settings_fields('vodpod_embedder');
+	do_settings_sections('vodpod_embedder');
 	//This is very important.
-	settings_fields('vodpod_embedder_options');
 	//
 	?>
 	<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
@@ -57,15 +61,19 @@ function vodpod_embedder_main_text() {
 }
 //Form input field here.
 function vodpod_embedder_api_field() {
-	$options= get_option('vodpod_embedder');
+	$options = get_option('vodpod_embedder_options', true);
 	$api_key = $options['api_key'];
-	echo "<input type='text' id='vodpod_embedder_api_key' name='vodpod_embedder[api_key]' value='{$api_key}' size='40' />";
+	echo "<input type='text' id='vodpod_embedder_api_key' name='vodpod_embedder_options[api_key]' value='{$options[api_key]}' size='40' />";
 }
 function vodpod_embedder_validate($input) {
 	if(! preg_match('/^[a-z0-9]*$/', $input['api_key'])) {
-		$input['api_key'] = '';
+		$newinput['api_key'] = '';
 		}
-	return $input;
+		else
+		{
+			$newinput[api_key] = $input[api_key];
+		}
+	return $newinput;
 
 }
 //Woo! This menu section is done.
