@@ -104,7 +104,7 @@ function vodpod_media_tab_content()
 {
 	media_upload_header(); // will add the tabs menu
 	//Grab the vodpod API key.
-	$vodpod_options = get_option('vodpod_embedder');
+	$vodpod_options = get_option('vodpod_embedder_options', true);
 	$api_key = $vodpod_options['api_key'];
 	if ($api_key == '')
 	{
