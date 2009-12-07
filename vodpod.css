@@ -1,0 +1,87 @@
+	h2 {
+		font-size: 18px;
+		font-weight: bold;
+	}
+	#container ul {
+		line-height: 20px;
+		padding-bottom: 40px;
+	}
+	#container a, #container a:visited {
+		color: #cc5333;
+	}
+	.vodpodVideo {
+		display: block;
+		float: left;
+		padding: 5px;
+	}
+	.vodpodVideo img {
+		float: left;
+	}
+	.vodpodVideo textarea {
+		width: 200px;
+		float: left;
+		height: 60px;
+		display: none;
+	}
+	#player {
+		width: 240px;
+		height: 180px;
+		float: right;
+		background: #CCCCCC;
+	}
+	#output {
+		width: 300px;
+		float: left;
+		clear: left;
+		height: 400px;
+		overflow-y: scroll;
+		padding-top: 5px;
+	}
+	.video_id {
+		display: none;
+	}
+	.video_title {
+		display: none;
+	}
+	#currentVideoInfo h2 {
+		display: block;
+	}
+	.fv {
+		display: none;
+	}
+	.flash_src {
+		display: none;
+	}
+	#playerHolder {
+		width: 240px;
+		margin: 0px auto;
+	}
+	#player {
+	}
+	#vodpodEmbedder {
+		width: 600px;
+		padding: 10px;
+	}
+	#controller {
+		width: 400px;
+		float: left;
+	}
+	#current_page {
+		width: 20px;
+	}
+	#playerControls {
+		clear: right;
+		text-align: left;
+	}
+	#vodpodLeft {
+		width:300px;
+		float: left;
+	}
+	#vodpodRight {
+		float: left;
+		text-align: center;
+		width: 300px;
+	}
+	.notification {
+		clear: both;
+	}
